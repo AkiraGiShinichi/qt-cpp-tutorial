@@ -7,3 +7,7 @@
     - include the headers of libraries
     - in `private slots: ...`: insert functions checking test cases
  - run testing
+
+## Reference:
+**Guidance with Sample projects**: http://blog.davidecoppola.com/2017/11/cpp-unit-testing-with-qt-test-introduction/
+**Guidance with Sample Codes**: https://doc.qt.io/qt-5/qtest-tutorial.html
