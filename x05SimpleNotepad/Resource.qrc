@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/res"/>
+    <qresource prefix="/">
+        <file>icon/Copy.ico</file>
+        <file>icon/Cut.ico</file>
+        <file>icon/Find.ico</file>
+        <file>icon/Help.ico</file>
+        <file>icon/New.ico</file>
+        <file>icon/Open.ico</file>
+        <file>icon/Paste.ico</file>
+        <file>icon/Redo.ico</file>
+        <file>icon/Save.ico</file>
+        <file>icon/Undo.ico</file>
+    </qresource>
+</RCC>
