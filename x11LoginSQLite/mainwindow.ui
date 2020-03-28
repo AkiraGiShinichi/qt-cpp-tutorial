@@ -46,7 +46,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_username"/>
+         <widget class="QLineEdit" name="lineEdit_username">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -61,6 +65,9 @@
         </item>
         <item>
          <widget class="QLineEdit" name="lineEdit_password">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="echoMode">
            <enum>QLineEdit::Password</enum>
           </property>

@@ -17,6 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    bool connectDB(const QString &address);
+    void disconnectDB();
+
 private slots:
     void on_pushButton_login_clicked();
 
