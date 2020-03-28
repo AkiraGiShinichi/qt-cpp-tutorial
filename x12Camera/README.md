@@ -1,5 +1,7 @@
 # Qt Widgets Camera
 
+![](demo.png)
+
 ## Key techniques:
  - QCameraViewfinder auto resizes when window change size:
     + QCameraViewfinder must be display on its own `QCameraViewfinder` widget, which is extend from `QWidget` by `customwidget`(not displayed on common `QLabel` as usual)
