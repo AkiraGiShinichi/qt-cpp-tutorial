@@ -45,6 +45,10 @@ void MainWindow::on_pushButton_login_clicked()
         if (count==1)
         {
             ui->label_status->setText("username & password are correct");
+            this->hide();
+            UserInfo userInfo;
+            userInfo.setModal(true);
+            userInfo.exec();
         }
         else if (count < 1)
         {
