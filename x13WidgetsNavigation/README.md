@@ -1,0 +1,1 @@
+# Navigate .ui files on QStackWidget
