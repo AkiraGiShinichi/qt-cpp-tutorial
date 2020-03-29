@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CameraForm</class>
+ <widget class="QWidget" name="CameraForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>413</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="2">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QWidget" name="page_viewfinder">
+      <layout class="QGridLayout" name="gridLayout_viewfinder">
+       <item row="0" column="0">
+        <widget class="QCameraViewfinder" name="viewfinder" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_photoPreview">
+      <layout class="QGridLayout" name="gridLayout_photoPreview">
+       <item row="0" column="0" rowspan="2">
+        <widget class="QClickableLabel" name="label_photoPreview">
+         <property name="text">
+          <string>Photo Preview</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="1" rowspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>GroupBox</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_takePhoto">
+        <property name="text">
+         <string>Take Photo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_preview">
+        <property name="text">
+         <string>View Photo</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCameraViewfinder</class>
+   <extends>QWidget</extends>
+   <header>qcameraviewfinder.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>qclickablelabel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
