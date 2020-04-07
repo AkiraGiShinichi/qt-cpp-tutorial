@@ -8,8 +8,11 @@
  - `Add New...`  `QML file(Qt Quick 2)`:
 
 ![](photos/02.png)
+
 ![](photos/03.png)
+
 ![](photos/04.png)
+
 ![](photos/05.png)
 
  - Code a custom button like below:
