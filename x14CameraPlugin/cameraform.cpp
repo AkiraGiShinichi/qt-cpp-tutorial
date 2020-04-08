@@ -3,13 +3,20 @@
 #include <QTimer>
 #include <QDir>
 
+class CameraForm::Impl
+{
+public:
+    QCamera *m_camera;
+    QCameraViewfinder *m_cameraViewfinder;
+    QCameraImageCapture *m_imageCapture;
+};
+
 CameraForm::CameraForm(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::CameraForm)
+    ui(new Ui::CameraForm),
+    m_Impl(new CameraForm::Impl())
 {
     ui->setupUi(this);
-
-//    setCamera(QCameraInfo::defaultCamera());
 }
 
 CameraForm::~CameraForm()
@@ -20,22 +27,22 @@ CameraForm::~CameraForm()
 void CameraForm::setCamera(const QCameraInfo &cameraInfo)
 {
     qDebug() << "setCamera";
-    m_camera = new QCamera(cameraInfo);
-    m_imageCapture = new QCameraImageCapture(m_camera);
 
-    m_camera->setViewfinder(this->ui->viewfinder);
+    m_Impl->m_camera = new QCamera(cameraInfo);
+    m_Impl->m_imageCapture = new QCameraImageCapture(m_Impl->m_camera);
+    m_Impl->m_camera->setViewfinder(this->ui->viewfinder);
 
-    connect(m_imageCapture, &QCameraImageCapture::imageCaptured, this, &CameraForm::on_image_captured);
-    connect(m_imageCapture, &QCameraImageCapture::imageSaved, this, &CameraForm::on_image_saved);
+    connect(m_Impl->m_imageCapture, &QCameraImageCapture::imageCaptured, this, &CameraForm::on_image_captured);
+    connect(m_Impl->m_imageCapture, &QCameraImageCapture::imageSaved, this, &CameraForm::on_image_saved);
 
     displayViewfinder();
-    m_camera->start();
+    m_Impl->m_camera->start();
 }
 
 void CameraForm::on_pushButton_takePhoto_clicked()
 {
     qDebug() << "on_pushButton_takePhoto_clicked";
-    m_imageCapture->capture();
+    m_Impl->m_imageCapture->capture();
 }
 
 void CameraForm::on_image_captured(int id, const QImage& previewImage)

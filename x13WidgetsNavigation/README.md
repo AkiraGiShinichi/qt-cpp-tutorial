@@ -1,1 +1,4 @@
-# Navigate .ui files on QStackWidget
+# Navigate .ui files on QStackWidgetgit stat
+
+
+

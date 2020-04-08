@@ -22,7 +22,6 @@ public:
     void setCamera(const QCameraInfo &cameraInfo);
 
 private slots:
-
     void on_pushButton_takePhoto_clicked();
     void on_image_captured(int id, const QImage& previewImage);
     void on_image_saved(int id, const QString &fileName);
@@ -36,10 +35,6 @@ private slots:
 
 private:
     Ui::CameraForm *ui;
-
-    QCamera *m_camera;
-    QCameraViewfinder *m_cameraViewfinder;
-    QCameraImageCapture *m_imageCapture;
 
     class Impl;
     Impl *m_Impl;
