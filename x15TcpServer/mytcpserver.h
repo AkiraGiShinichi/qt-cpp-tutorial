@@ -2,6 +2,8 @@
 #define MYTCPSERVER_H
 
 #include <QObject>
+#include <QTcpSocket>
+#include <QTcpServer>
 
 class MyTcpServer : public QObject
 {
@@ -11,6 +13,11 @@ public:
 
 signals:
 
+public slots:
+    void newConnection();
+
+private:
+    QTcpServer *server;
 };
 
 #endif // MYTCPSERVER_H
