@@ -1,4 +1,6 @@
-QT       += core gui
+#Reference Source: https://www.bogotobogo.com/Qt/Qt5_QTcpServer_Client_Server_Loopback_Example.php
+
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
