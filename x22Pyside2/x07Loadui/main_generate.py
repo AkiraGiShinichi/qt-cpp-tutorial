@@ -9,7 +9,10 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton.setText("HOHO") # access widget to change displayed text
+
+        print(self.ui.pushButton.text()) # access widget
+        self.ui.pushButton.setText("HOHO") # change displayed text
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
