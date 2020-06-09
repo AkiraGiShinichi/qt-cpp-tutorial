@@ -10,6 +10,7 @@ class MyUdp : public QObject
 public:
     explicit MyUdp(QObject *parent = nullptr);
     void helloUdp();
+    void sendTo(QString hostAddr, quint16 port, QString cmd);
 
 signals:
 

@@ -6,7 +6,8 @@ MyUdp::MyUdp(QObject *parent) : QObject(parent)
     socket = new QUdpSocket(this);
 
     // The most common way to use QUdpSocket class is to bind to an address and port using bind()
-    socket->bind(QHostAddress::LocalHost, 1235);
+//    socket->bind(QHostAddress::LocalHost, 1235);
+    socket->bind(QHostAddress("192.168.240.222"), 1235);
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
@@ -24,7 +25,16 @@ void MyUdp::readyRead()
 
     qDebug() << "Message from: " << senderHost.toString();
     qDebug() << "Message port: " << senderPort;
-    qDebug() << "Message: " << buffer;
+    qDebug() << "Message: " << buffer.size() << " " << buffer;
+}
+
+void MyUdp::sendTo(QString hostAddr, quint16 port, QString cmd)
+{
+    QByteArray Data;
+    Data.append(cmd);
+
+    // Sends the datagram datagram to the host address and at port.
+    socket->writeDatagram(Data, QHostAddress(hostAddr), port);
 }
 
 void MyUdp::helloUdp()
